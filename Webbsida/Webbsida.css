@@ -1,9 +1,68 @@
 body {
-    margin: 0;
+    margin: 50px 100px;
 }
 
 #container {
-    margin: 20px 60px;
+    margin: auto;
+    gap: 10px;
+
     display: flex;
+}
+
+/* Shared */
+
+.CommonContainer {
+    width: 30%;
+}
+
+.InputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: aquamarine;
+    border: 20px solid black;
+    padding: 30px 15px;
+}
+
+.TextField {
+    display: flex; 
     gap: 10px;
 }
+
+.TextField p {
+    margin: 0;
+    font-size: 25px;
+}
+
+.ButtonContainer {
+    border: 20px solid black;
+}
+
+.Button {
+    background-color: rgb(129, 214, 0);
+    width: 100%;
+}
+
+/* CityList */
+
+#CityListContainer {
+    padding: 15px 30px;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+}
+
+#ListTitle {
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+/* AddCity */
+
+#AddCityContainer {
+
+}
+
+
+/* SearchCity */

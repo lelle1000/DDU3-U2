@@ -9,24 +9,40 @@
 <body>
     <main id="container">
 
-        <div id="CityListContainer">
-            <p>LIST OF CITIES</p>
+        <div class="CommonContainer" id="CityListContainer">
+            <p id="ListTitle">LIST OF CITIES</p>
         </div>
 
-        <div id="AddCityContainer">
+        <div class="CommonContainer" id="AddCityContainer">
             <div class="InputContainer">
-                <input type="text" id="AddCityName">
-                <input type="text" id="AddCityCountry">
+                <div class="TextField">
+                    <p>Name:</p>
+                    <input type="text" id="AddCityName">
+                </div>
+                <div class="TextField">
+                    <p>Country:</p>
+                    <input type="text" id="AddCityCountry">
+                </div>
             </div>
-            <button id="AddCityButton"></button>
+            <div class="ButtonContainer">
+                <button class="Button" id="AddCityButton">Add City</button>
+            </div>
         </div>
 
-        <div id="SearchCityContainer">
+        <div class="CommonContainer" id="SearchCityContainer">
             <div class="InputContainer">
-                <input type="text" id="SearchCityText">
-                <input type="text" id="SearchCityCountry">
+                <div class="TextField">
+                    <p>Text:</p>
+                    <input type="text" id="SearchCityText">
+                </div>
+                <div class="TextField">
+                    <p>Country:</p>
+                    <input type="text" id="SearchCityCountry">
+                </div>
             </div>
-            <button id="SearchCityButton"></button>
+            <div class="ButtonContainer">
+                <button class="Button" id="SearchCityButton">Search Cities</button>
+            </div>
             <div id="SearchCities">
 
             </div>
