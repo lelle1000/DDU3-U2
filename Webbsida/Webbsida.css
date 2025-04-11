@@ -21,6 +21,7 @@ body {
     gap: 15px;
     background-color: aquamarine;
     border: 20px solid black;
+    border-bottom: 0px;
     padding: 30px 15px;
 }
 
@@ -36,21 +37,47 @@ body {
 
 .ButtonContainer {
     border: 20px solid black;
+    background-color: black;
+    
 }
 
 .Button {
     background-color: rgb(129, 214, 0);
     width: 100%;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    padding: 20px;
 }
+.Button:hover {
+    background-color: rgba(128, 214, 0, 0.637);
+    cursor: pointer;
+}
+
+.InputCSS {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color: aquamarine;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    width: 50%;
+}
+
+
 
 /* CityList */
 
 #CityListContainer {
-    padding: 15px 30px;
+    padding: 15px 40px 0px 40px;
     background-color: aquamarine;
     display: flex;
-    justify-content: center;
-    height: 90vh;
+    flex-direction: column;
+    align-items: center;
+    height: 85vh;
+
 }
 
 #ListTitle {
@@ -60,9 +87,34 @@ body {
 
 /* AddCity */
 
-#AddCityContainer {
+#AddedCitiesList {
+    display: flex;
+    
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
 
+    background-color: aquamarine;
+    height: 100%;
+    width: 100%;
+    gap: 8px;
 }
 
-
 /* SearchCity */
+
+#SearchCities {
+    background-color: aquamarine;
+    padding: 20px 20px 0px 20px;
+    border-left: 20px solid black;
+    border-right: 20px solid black;
+    border-bottom: 40px solid black;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
