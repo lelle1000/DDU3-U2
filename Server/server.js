@@ -39,7 +39,7 @@ async function handler (request) {
 
         if (!text) {
             return new Response("Text Needs To Be Filled", {
-                status: 404,
+                status: 400,
                 headers: headersCORS
             })
         }
@@ -116,23 +116,23 @@ async function handler (request) {
             }
             if (!isNaN(RequestData.id) && RequestData.id > 0) {
                 const CityIndex = cities.findIndex(CorrectCity => CorrectCity.id === RequestData.id)
-                cities.splice(CityIndex, 1)
-                return new Response("Delete OK", {
-                    status: 200,
-                    headers: headersCORS
-                })
-            } else {
-                return new Response("City ID is not in use or is a string", { 
-                    status: 404,
-                    headers: headersCORS
-                })
+                if (CityIndex === -1) {
+                    return new Response("City ID is not in use or is a string", { 
+                        status: 404,
+                        headers: headersCORS
+                    })
+                } else {
+                    cities.splice(CityIndex, 1)
+                    return new Response("Delete OK", {
+                        status: 200,
+                        headers: headersCORS
+                    })
+                }
             }
         }
 
         return new Response("Wrong method, required method: POST || GET || DELETE", { status: 400 })
     }   
-
-    
 
     return new Response("Invalid endpoint", { status: 400 })
 

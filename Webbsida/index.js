@@ -25,7 +25,7 @@ async function GetCities () {
     const response = await fetch(ExistingCities)
     const resource = await response.json()
 
-    if (response.ok) {
+    if (response.status == 200) {
         for (let city of resource) {
             let randomImage = RandomImages[Math.floor(Math.random() * RandomImages.length)]
             const cityDiv = document.createElement("div")
@@ -46,6 +46,7 @@ async function GetCities () {
 
                 const RemoveCity = new Request(`http://localhost:8000/cities`, {
                     method: "DELETE",
+                    headers: { "Content-Type" : "application/json" },
                     body: JSON.stringify({ id: city.id})
                 })
         
@@ -100,6 +101,7 @@ addbutton.addEventListener("click", async function () {
 
         const RemoveCity = new Request(`http://localhost:8000/cities`, {
             method: "DELETE",
+            headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({ id: NewCity.id})
         })
 
